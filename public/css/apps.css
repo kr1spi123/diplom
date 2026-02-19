@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    background-color: #F4F5F6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #424551;
+    line-height: 1.6;
+}
+
+main {
+    flex: 1;
+    padding: 60px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Заголовок страницы */
+.page-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #1E212C;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.page-description {
+    font-size: 18px;
+    color: #424551;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+/* Сетка специальностей */
+.specialties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Карточка специальности */
+.specialty-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.specialty-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.specialty-photo {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.specialty-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.specialty-card:hover .specialty-photo img {
+    transform: scale(1.08);
+}
+
+.specialty-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: linear-gradient(to bottom, #FFFFFF, #F8F9FA);
+}
+
+.specialty-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1E212C;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.specialty-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #424551;
+}
+
+.specialty-description {
+    color: #424551;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.specialty-skills {
+    margin-bottom: 24px;
+}
+
+.specialty-skills h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1E212C;
+    margin-bottom: 14px;
+}
+
+.specialty-skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.specialty-skills li {
+    background: #F4F5F6;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #424551;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.specialty-skills li:hover {
+    background: #FF5A30;
+    color: #FFFFFF;
+    border-color: #FF5A30;
+    transform: translateY(-2px);
+}
+
+.btn-more {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #FF5A30;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    text-align: center;
+    margin-top: auto;
+    border: 2px solid transparent;
+}
+
+.btn-more:hover {
+    background: #FFFFFF;
+    color: #FF5A30;
+    border-color: #FF5A30;
+    transform: translateY(-2px);
+}
+
+.no-data {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    color: #424551;
+    font-size: 18px;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .specialties-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 991px) {
+    .page-title {
+        font-size: 36px;
+    }
+
+    .page-description {
+        font-size: 16px;
+    }
+
+    .specialty-photo {
+        height: 180px;
+    }
+
+    .specialty-content {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 40px 0;
+    }
+
+    .page-title {
+        font-size: 32px;
+    }
+
+    .specialty-title {
+        font-size: 18px;
+    }
+
+    .specialty-photo {
+        height: 160px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .page-title {
+        font-size: 28px;
+    }
+
+    .specialties-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .specialty-photo {
+        height: 200px;
+    }
+
+    .specialty-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn-more {
+        width: 100%;
+    }
+}
+
+@media (max-width: 375px) {
+    .page-title {
+        font-size: 24px;
+    }
+
+    .specialty-photo {
+        height: 180px;
+    }
+
+    .specialty-content {
+        padding: 12px;
+    }
+
+    .specialty-skills li {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}
+
