@@ -65,7 +65,7 @@
         @csrf
         <label><span style="color: #FF5A30;">App</span><span>licant</span></label>
 
-        <!-- Сообщения об успехе/ошибке -->
+
         @if (session('success'))
         <div class="success-message active">{{ session('success') }}</div>
         @endif
